@@ -1,0 +1,12 @@
+<%= link_to("<< Home", root_path, :class => 'back-link')%>
+<h2>Create New User</h2>
+<%= form_for(@user) do |f| %>
+   <table summary = "User form fields">
+    <tr>
+      <th>First Name</th>
+      <td><%= f.text_field(:first_name) %></td>
+
+    </tr>
+
+    </table>
+<%end%>
