@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :users, :except => [:index]
   get 'users/delete'
   
-  get 'login', to: 'session#login'
+  get 'login', to: 'sessions#login'
   
   
   
