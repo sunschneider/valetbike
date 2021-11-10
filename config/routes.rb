@@ -3,10 +3,9 @@ Rails.application.routes.draw do
   root to: "stations#index"
   
   resources :users, :except => [:index]
-  get 'user/delete'
+  get 'users/delete'
   
-  get 'login', to: 'session#login'
-  post 'login', to: 'session#create'
+  get 'login', to: 'sessions#login'
   
   
   
