@@ -3,7 +3,6 @@
     <div class="section-title">
       Valetbike Stations
     </div>
-    <%= link_to("Map", {:action => 'map'}) %>
     <div class="flexbox vertical stretch">
       <% if @stations.present? %>
         <%= render(partial: "stations/row", collection: @stations, as: :station) %>
@@ -13,5 +12,6 @@
       </div>
       <% end %>
     </div>
+      <%= link_to("Map", {:action => 'map'}) %>
 	</div>
 </div>

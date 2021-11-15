@@ -1,13 +1,8 @@
-<h1>Map</h1>
-<div id="map">
-  <%= map(:center => {
-    :latlng => [51.52238797921441, -0.08366235665359283],
-    :zoom => 18
-  }) %>
-  </div>
-
 <h1>Nipmunk Notch Map</h1>
-<p>This is where the map will go eventually.</p>
+<div id="map"><%= map(:center => {
+ :latlng => [51.52238797921441, -0.08366235665359283],
+ :zoom => 18
+}) %></div>
 <%= link_to("Stations", {:action => 'index'}) %>
 
 <%# https://github.com/axyjo/leaflet-rails
