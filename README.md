@@ -3,13 +3,6 @@
 Smith College CSC223: Introduction to Software Engineering\
 Group F ValetBike project
 
-Deliver your code by creating a pull request from the modified fork of the main ValetBike repo that your group has been collaborating on. In the version of code you deliver you must update the README file to include:
-
-    Overview of dev environment setup (e.g. updates to _env.rb)
-    Instructions for populating the database (e.g. a rake task or seed setup)
-    Description of the prototype's functionality
-    Recommended walkthrough steps to observe key features
-
 ### How to Begin
 * Create a GitHub account if you don't have one
 * Go to [https://github.com/sunschneider/valetbike](https://github.com/sunschneider/valetbike)
