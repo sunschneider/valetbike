@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post 'login', to: 'session#create'
   get 'user/settings'
   get 'stations/map'
+  get 'user/stats'
 
 
   #default route (keep at bottom)
