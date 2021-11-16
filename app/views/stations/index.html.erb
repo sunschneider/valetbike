@@ -1,8 +1,8 @@
 <div class="page-section flexbox vertical stretch">
   <div class="section-inner flexbox vertical stretch">
     <div class="section-title">
-      hello world or whatever :)
-    </div>  
+      Valetbike Stations
+    </div>
     <div class="flexbox vertical stretch">
       <% if @stations.present? %>
         <%= render(partial: "stations/row", collection: @stations, as: :station) %>
@@ -12,5 +12,6 @@
       </div>
       <% end %>
     </div>
+      <%= link_to("Map", {:action => 'map'}) %>
 	</div>
 </div>
