@@ -35,8 +35,8 @@ Group F (Golden Girls) ValetBike project
 * `cd valetbike`
 * `bundle install`
 
-7. In the valetbike/config/initializers folder, add a new file named "_env.rb". In this file add this:
-* # Set up local database credentials
+7. Set up local database credentials 
+* In the valetbike/config/initializers folder, add a new file named "_env.rb". In this file add this:
 * ENV['MYSQL_USERNAME']   =   "your username"
 * ENV['MYSQL_PASSWORD']   =   "your password"
 
