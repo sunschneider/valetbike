@@ -2,6 +2,7 @@
 
 Smith College CSC223: Introduction to Software Engineering\
 Group F (Golden Girls) ValetBike project
+(words in `` are what you type into the terminal)
 
 ### How to Begin
 * Create a GitHub account if you don't have one
@@ -9,7 +10,8 @@ Group F (Golden Girls) ValetBike project
 * Follow the README instructions to configure your environment
 
 ## General Configuration
-1. Ensure you have MySQL 8.0.26 downloaded
+1. Ensure you have MySQL 8.0.26 downloaded 
+* !! Currently unsure if it is necessary!! Various team members have found this to cause an error in the later steps, particularly for step 8, so if you are experiencing any trouble just delete the MySQL you downloaded!!
 * Download: https://dev.mysql.com/downloads/mysql
 * Choose "Use Legacy Password Encryption"
 * After install make sure you add `/usr/local/mysql/bin` (or equivalent) to your path
@@ -27,7 +29,7 @@ Group F (Golden Girls) ValetBike project
 
 5. Fork & clone ValetBike repo
 * Click fork in the upper right hand corner of the ValetBike GitHub page
-* `git clone https://github.com/<sunschneider>/valetbike.git`
+* `git clone https://github.com/sunschneider/valetbike.git`
 
 6. Install gems
 * `cd valetbike`
@@ -40,6 +42,9 @@ Group F (Golden Girls) ValetBike project
 
 8. Prepare databases in MySQL
 * `mysql -u root -p`
+* `service mysql status`
+*  Copy the socket path from the terminal under "UNIX socket"
+* Paste to the socket in the database.yml under the config folder 
 * `CREATE DATABASE valetbike_development;`
 
 9. Run database migrations
