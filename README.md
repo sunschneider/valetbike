@@ -42,15 +42,16 @@ Group F (Golden Girls) ValetBike project
 
 8. Prepare databases in MySQL
 * `mysql -u root -p`
-* `service mysql status`
-*  Copy the socket path from the terminal under "UNIX socket"
-* Paste to the socket in the database.yml under the config folder 
 * `CREATE DATABASE valetbike_development;`
 
 9. Run database migrations
+* `service mysql status`
+*  Copy the socket path from the terminal under "UNIX socket"
+* Paste to the socket in the database.yml under the config folder 
 * `rake db:migrate`
 
 10. Confirm app runs
+* `sudo service mysql start`
 * `rackup`
 * Open http://localhost:9292 (or http://127.0.0.1:9292) in a browser
 * You should Group F's ValetBike welcome page
