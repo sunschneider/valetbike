@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-
-  root to: "stations#index"
+  
+  root to: "sessions#home"
+  
 
   resources :users, :except => [:index]
   get 'user/delete'
@@ -15,10 +16,16 @@ Rails.application.routes.draw do
   get 'users/delete'
   
   get 'login', to: 'sessions#login'
+  get 'stations', to: 'stations#index'
   
   
   
   #default route (keep at bottom)
   get ':controller(/:action(/:id))'
 
+  
 end
+
+
+end
+
