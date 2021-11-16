@@ -3,13 +3,15 @@
 Smith College CSC223: Introduction to Software Engineering\
 Group F (Golden Girls) ValetBike project
 
+
 ### How to Begin
 * Create a GitHub account if you don't have one
 * Go to [https://github.com/sunschneider/valetbike](https://github.com/sunschneider/valetbike)
 * Follow the README instructions to configure your environment
 
 ## General Configuration
-1. Ensure you have MySQL 8.0.26 downloaded
+1. Ensure you have MySQL 8.0.26 downloaded 
+* !! Currently unsure if it is necessary!! Various team members have found this to cause an error in the later steps, particularly for step 8, so if you are experiencing any trouble just delete the MySQL you downloaded!!
 * Download: https://dev.mysql.com/downloads/mysql
 * Choose "Use Legacy Password Encryption"
 * After install make sure you add `/usr/local/mysql/bin` (or equivalent) to your path
@@ -27,19 +29,22 @@ Group F (Golden Girls) ValetBike project
 
 5. Fork & clone ValetBike repo
 * Click fork in the upper right hand corner of the ValetBike GitHub page
-* `git clone https://github.com/<sunschneider>/valetbike.git`
+* `git clone https://github.com/sunschneider/valetbike.git`
 
 6. Install gems
 * `cd valetbike`
 * `bundle install`
 
-7. In the valetbike/config/initializers folder, add a new file named "_env.rb". In this file add this:
-* # Set up local database credentials
+7. Set up local database credentials 
+* In the valetbike/config/initializers folder, add a new file named "_env.rb". In this file add this:
 * ENV['MYSQL_USERNAME']   =   "your username"
 * ENV['MYSQL_PASSWORD']   =   "your password"
 
 8. Prepare databases in MySQL
 * `mysql -u root -p`
+* `service mysql status`
+*  Copy the socket path from the terminal under "UNIX socket"
+* Paste to the socket in the database.yml under the config folder 
 * `CREATE DATABASE valetbike_development;`
 
 9. Run database migrations
