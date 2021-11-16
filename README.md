@@ -1,7 +1,7 @@
 # ValetBike
 
 Smith College CSC223: Introduction to Software Engineering\
-Group F ValetBike project
+Group F (Golden Girls) ValetBike project
 
 ### How to Begin
 * Create a GitHub account if you don't have one
