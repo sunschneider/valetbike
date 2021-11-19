@@ -1,4 +1,3 @@
 <div class="record-row <%= cycle "odd", "even", name: "row-cycler" %> flexbox vertical stretch">
-  <%= station.identifier %>: <%= station.name %> (<%= station.address %>) Bikes Docked: <%= station.docked_bikes.count %>
-
+  <%= station.identifier %>: <%= station.name %> (<%= station.address %>)  <%=link_to("Find bikes", station_bike_path(station)) %>
 </div>

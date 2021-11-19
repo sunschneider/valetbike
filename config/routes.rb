@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
   
+  get 'bikes/show'
   root to: "sessions#home"
   
 
   resources :users, :except => [:index]
   get 'user/delete'
+  
+  resources :stations do
+    resource :bike
+  end
 
   get 'login', to: 'session#login'
   post 'login', to: 'session#create'
@@ -27,5 +32,5 @@ Rails.application.routes.draw do
 end
 
 
-end
+#end
 
