@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   
-  get 'bikes/show'
   root to: "sessions#home"
   
 
@@ -11,10 +10,11 @@ Rails.application.routes.draw do
     resource :bike
   end
 
-  get 'login', to: 'session#login'
+  get 'bikes/show'
   post 'login', to: 'session#create'
   get 'user/settings'
-  get 'stations/map'
+  get 'stations/map', to: 'stations#map'
+  #get 'stations/show'
   get 'user/stats'
 
 
