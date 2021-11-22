@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get 'bikes/show'
   post 'login', to: 'session#create'
   get 'user/settings'
-  get 'stations/map', to: 'stations#map'
+  get '/stations/map', to: 'stations#map', as: :stations_map
   #get 'stations/show'
   get 'user/stats'
 
