@@ -11,8 +11,8 @@ Rails.application.routes.draw do
     resource :bike
   end
 
-  get 'login', to: 'session#login'
-  post 'login', to: 'session#create'
+  get 'login', to: 'sessions#login'
+  post 'login', to: 'sessions#create'
   get 'user/settings'
   get 'stations/map'
   get 'user/stats'
