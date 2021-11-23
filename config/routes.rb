@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: "sessions#home"
   
 
+
+
   resources :users, :except => [:index]
   get 'user/delete'
   
@@ -12,10 +14,12 @@ Rails.application.routes.draw do
 
   get 'bikes/show'
   post 'login', to: 'session#create'
-  get 'user/settings'
+
+  get 'users/settings'
   get '/stations/map', to: 'stations#map', as: :stations_map
   #get 'stations/show'
-  get 'user/stats'
+  get 'users/stats'
+
 
 
   get 'users/delete'
