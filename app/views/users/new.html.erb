@@ -1,2 +1,25 @@
-<h1>User#new</h1>
-<p>Find me in app/views/user/new.html.erb</p>
+<%= link_to("<< Home", root_path, :class => 'back-link')%>
+<h2>Create New User</h2>
+<%= form_for(@user) do |f| %>
+   <table summary = "User form fields">
+    <tr>
+      <th>First Name</th>
+      <td><%= f.text_field(:first_name) %></td>
+    </tr>
+    <tr>
+      <th>Last Name</th>
+      <td><%= f.text_field(:last_name) %></td>
+    </tr>
+    <tr>
+      <th>Email</th>
+      <td><%= f.text_field(:email) %></td>
+    </tr>
+    <tr>
+      <th>Password</th>
+      <td><%= f.text_field(:password) %></td>
+    </tr>
+    </table>
+<%end%>
+
+<%= submit_tag "Create"%>
+

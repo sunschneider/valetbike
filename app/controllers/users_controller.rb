@@ -22,9 +22,11 @@ class UsersController < ApplicationController
   
   def destroy
   end
+
   def index
     @user = User.all.order(identifier: :asc)
   end
+
 
   
 end
