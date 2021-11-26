@@ -1,14 +1,30 @@
-<head>
+<!DOCTYPE html> 
+<html> 
+	<head>
+	<meta charset = "UTI-8">
 	<title>Valetbike - home</title>
-</head>
-<body>
+	</head>
 
-<h1>Welcome to ValetBike!</h1>
-
-<%= link_to("Login", login_path)%>
-<%= link_to("Create Account", new_user_path)%>
-<%= link_to("Stations", stations_path)%>
-
-
+	<body>
 		
-</body>
+		<nav>  
+			<div class = "container"> 
+				<h1>Welcome to ValetBike!</h1>
+
+				<div class = "menu"> 
+					<%= link_to("Login", login_path)%>
+					<%= link_to("Create Account", new_user_path)%>
+					<%= link_to("Stations", stations_path)%>
+				</div> 
+
+				<button class = "hamburger"> 
+					<span></span>
+					<span></span>
+					<span></span>
+				</button> 
+			</div> 
+		</nav> 
+		<script src = "home_page.js"></script> 
+	</body>
+
+</html> 
