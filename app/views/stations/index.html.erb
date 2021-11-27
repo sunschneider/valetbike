@@ -1,8 +1,22 @@
-<div class="page-section flexbox vertical stretch">
+!DOCTYPE html> 
+<html> 
+<head> 
+  <meta charset = "UTI-8">
+	<title>Valetbike - Stations</title>
+</head> 
+<body>
+  <nav> 
+    <div class = "container"> 
+      <h2>Valetbike Stations</h2>
+      <div class = "menu">
+        <%= link_to("Home", root_path, :class => 'back-link')%>
+        <%= link_to("Map", {:action => 'map'}) %>
+      </div> 
+    </div> 
+  </nav> 
+
+  <div class="page-section flexbox vertical stretch">
   <div class="section-inner flexbox vertical stretch">
-    <div class="section-title">
-      Valetbike Stations
-    </div>
     <div class="flexbox vertical stretch">
       <% if @stations.present? %>
         <%= render(partial: "stations/row", collection: @stations, as: :station) %>
@@ -12,6 +26,11 @@
       </div>
       <% end %>
     </div>
-      <%= link_to("Map", {:action => 'map'}) %>
 	</div>
-</div>
+  </div>
+</body> 
+</html> 
+
+
+
+
