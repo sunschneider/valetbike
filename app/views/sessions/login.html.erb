@@ -1,15 +1,31 @@
-<%= link_to("<< Home", root_path, :class => 'back-link')%>
-<h2>User Login</h2>
-<p>
-   <%= form_tag '/login' do %>
-   <%= label_tag :email%>
-   <%= text_field_tag :email %>
-   <%= label_tag :password%>
-   <%= password_field_tag :password%>
-   <%= submit_tag "Login"%>
-<%end%>
-</p>
-
-<%= link_to("Create A New Account", {:controller => 'users', :action => 'new'})%>
-
-<!Code from https://levelup.gitconnected.com/simple-authentication-guide-with-ruby-on-rails-16a6255f0be8>
+<!DOCTYPE html> 
+<html> 
+   <head>
+	<meta charset = "UTI-8">
+	<title>Valetbike - home</title>
+	</head>
+   <body>
+   
+   <nav>
+      <div class = "container"> 
+         <h2>User Login</h2>
+         <div class = "menu"> 
+            <%= link_to("Home", root_path, :class => 'back-link')%>
+            <%= link_to("Create A New Account", {:controller => 'users', :action => 'new'})%>
+         </div> 
+      </div> 
+   </nav> 
+   <div class = "form"> 
+      <p>
+         <%= form_tag '/login' do %>
+         <%= label_tag :email%>
+         <%= text_field_tag :email %>
+         <%= label_tag :password%>
+         <%= password_field_tag :password%>
+         <%= submit_tag "Login"%>
+         <%end%>
+      </p>
+   </div> 
+   <!Code from https://levelup.gitconnected.com/simple-authentication-guide-with-ruby-on-rails-16a6255f0be8>
+   </body> 
+</html> 

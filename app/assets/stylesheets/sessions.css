@@ -106,6 +106,7 @@ nav {
   transition: 0.4s; 
   padding: 8px 16px; 
   border-radius: 99px; 
+  text-transform: uppercase; 
 }
 
 .menu a:hover { 
