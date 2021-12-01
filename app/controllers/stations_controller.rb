@@ -10,4 +10,7 @@ class StationsController < ApplicationController
   def map
   end
 
+  def map
+  end
+
 end
