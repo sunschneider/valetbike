@@ -3,7 +3,7 @@
       <tr>
         <td><%= bike.current_station.name %></td>
         <td><%= bike.identifier %></td>
-        <td>link_to("Checkout", station_bike_path(@bike.id), action: "patch") </td>
+        <td><%=link_to("Checkout", station_bike_path(bike.id), action: "patch") %></td>
       </tr> 
     <%end%>
 </tbody> 

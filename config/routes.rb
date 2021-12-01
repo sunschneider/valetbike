@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   
-  get 'bikes/show'
   root to: "sessions#home"
   
+
+
 
   resources :users, :except => [:index]
   get 'user/delete'
@@ -16,6 +17,7 @@ Rails.application.routes.draw do
   get 'user/settings'
   get 'stations/map'
   get 'user/stats'
+
 
 
   get 'users/delete'
