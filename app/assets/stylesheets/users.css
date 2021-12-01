@@ -28,7 +28,6 @@ nav {
   border-bottom: 3px solid var(--primary); 
 }
 
-
 .menu { 
   flex: 1 1 0; 
   justify-content: flex-end; 
