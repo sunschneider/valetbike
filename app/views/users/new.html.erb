@@ -1,26 +1,45 @@
-<%= link_to("<< Home", root_path, :class => 'back-link')%>
-<h2>Create New User</h2>
-<%= form_for(@user) do |f| %>
-   <table summary = "User form fields">
-    <tr>
-      <th>First Name</th>
-      <td><%= f.text_field(:first_name) %></td>
-    </tr>
-    <tr>
-      <th>Last Name</th>
-      <td><%= f.text_field(:last_name) %></td>
-    </tr>
-    <tr>
-      <th>Email</th>
-      <td><%= f.text_field(:email) %></td>
-    </tr>
-    <tr>
-      <th>Password</th>
-      <td><%= f.text_field(:password) %></td>
-    </tr>
-    </table>
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <meta charset = "UTI-8">
+	<title>Valetbike - createNewUser</title>
+</head> 
+<body>
+  <nav> 
+    <div class = "container"> 
+      <h2>Create New User</h2>
+      <div class = "menu">
+        <%= link_to("Home", root_path, :class => 'back-link')%>
+      </div> 
+    </div> 
+  </nav> 
 
-<%= submit_tag "Create"%>
-
-<%end%>
-
+  <div class = "form"> 
+    <%= form_for(@user) do |f| %>
+    <table summary = "User form fields">
+      <tr>
+        <th>First Name</th>
+        <td><%= f.text_field(:first_name) %></td>
+      </tr>
+      <tr>
+        <th>Last Name</th>
+        <td><%= f.text_field(:last_name) %></td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td><%= f.text_field(:email) %></td>
+      </tr>
+      <tr>
+        <th>Password</th>
+        <td><%= f.text_field(:password) %></td>
+      </tr>
+      </table>
+    <%end%>
+  </div> 
+  
+  <div class = "create"> 
+      <%= submit_tag "Create"%>
+  </div> 
+  
+</body> 
+</html> 
