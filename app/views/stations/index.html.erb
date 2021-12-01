@@ -1,3 +1,6 @@
+<div class="logout">
+<%= link_to("Log out", logout_path, method: :delete) %>
+</div>
 <div class="page-section flexbox vertical stretch">
   <div class="section-inner flexbox vertical stretch">
     <div class="section-title">
@@ -12,6 +15,6 @@
       </div>
       <% end %>
     </div>
-      <%= link_to("Map", {:action => 'map'}) %>
+      <%= link_to("Map", stations_map_path) %>
 	</div>
 </div>

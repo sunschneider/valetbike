@@ -26,6 +26,12 @@ ActiveRecord::Schema.define(version: 2021_12_01_012217) do
     t.string "address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+
+    t.float "longitude"
+    t.float "latitude"
+
+    t.integer "dock_count"
+
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|

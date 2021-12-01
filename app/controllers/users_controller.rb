@@ -7,8 +7,14 @@ class UsersController < ApplicationController
   end
   
   def create
-    @user = User.create(params.require(:user).permit(:first_name))
+
+    @user = User.new(params.require(:user).permit(:first_name, :last_name, :email, :password))
     session[:user_id] = @user.id
+    if @user.save
+      redirect_to(stations_path)
+    else
+      render('new')
+    end
   end
 
   def edit
@@ -22,9 +28,11 @@ class UsersController < ApplicationController
   
   def destroy
   end
-  
+
   def index
-  @user = User.all.order(identifier: :asc)
+    @user = User.all.order(identifier: :asc)
   end
+
+
   
 end
