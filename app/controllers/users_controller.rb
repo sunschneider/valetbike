@@ -9,8 +9,8 @@ class UsersController < ApplicationController
   def create
 
     @user = User.new(params.require(:user).permit(:first_name, :last_name, :email, :password))
-    session[:user_id] = @user.id
     if @user.save
+      session[:user_id] = @user.id
       redirect_to(stations_path)
     else
       render('new')

@@ -10,8 +10,11 @@ class BikesController < ApplicationController
 
   def payment
   end
- 
-  def update
+  
+  def edit
+    #for checking out a bike
+    @bike = Bike.find(params[:id])
+    @bike.current_station_id = NULL
   end
 
   def delete
