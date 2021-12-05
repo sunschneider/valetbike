@@ -4,7 +4,7 @@
       <tr>
         <td><%= bike.current_station.name %></td>
         <td><%= bike.identifier %></td>
-        <td><%=link_to("Checkout", edit_bike_path(bike_id: @bike.id)) %></td>
+        <td><%=link_to("Checkout", edit_station_bike_path(bike_id: bike.id)) %></td>
       </tr> 
     <%end%>
     <% else %>
