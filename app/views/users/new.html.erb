@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html> 
+<html>
 <head>
   <meta charset = "UTI-8">
 	<title>Valetbike - createNewUser</title>
@@ -13,33 +13,27 @@
       </div>
     </div>
   </nav>
+  
+<p><br><br><br><br><br></p>
+  <%= form_for(@user) do |f| %>
+   <table summary = "User form fields">
+    <tr>
+      <th>First Name</th>
+      <td><%= f.text_field(:first_name) %></td>
+    </tr>
+    <tr>
+      <th>Last Name</th>
+      <td><%= f.text_field(:last_name) %></td>
+    </tr>
+    <tr>
+      <th>Email</th>
+      <td><%= f.text_field(:email) %></td>
+    </tr>
+    <tr>
+      <th>Password</th>
+      <td><%= f.text_field(:password) %></td>
+    </tr>
+    </table>
 
-  <div class = "form">
-    <%= form_for(@user) do |f| %>
-    <table summary = "User form fields">
-      <tr>
-        <th>First Name</th>
-        <td><%= f.text_field(:first_name) %></td>
-      </tr>
-      <tr>
-        <th>Last Name</th>
-        <td><%= f.text_field(:last_name) %></td>
-      </tr>
-      <tr>
-        <th>Email</th>
-        <td><%= f.text_field(:email) %></td>
-      </tr>
-      <tr>
-        <th>Password</th>
-        <td><%= f.text_field(:password) %></td>
-      </tr>
-      </table>
-    <%end%>
-  </div>
-
-  <div class = "create">
-      <%= submit_tag "Create"%>
-  </div>
-
-</body>
-</html>
+<%= submit_tag "Create"%>
+<%end%>

@@ -1,25 +1,30 @@
-!DOCTYPE html> 
-<html> 
-<head> 
+!DOCTYPE html>
+<html>
+<head>
   <meta charset = "UTI-8">
 	<title>Valetbike - Stations</title>
-</head> 
+</head>
 <body>
-  <nav> 
-    <div class = "container"> 
+  <nav>
+    <div class = "container">
       <h2>Valetbike Stations</h2>
       <div class = "menu">
         <%= link_to("Home", root_path, :class => 'back-link')%>
         <%= link_to("Map", {:action => 'map'}) %>
-      </div> 
-    </div> 
-  </nav> 
+        <%= if logged_in?
+           link_to("Stats", {:controller => 'users', :action => 'stats'})
+        end %>
+        <%= if logged_in?
+           link_to("Settings", {:controller => 'users', :action => 'settings'})
+        end %>
+        <%= if logged_in?
+          link_to("Log Out", logout_path, method: :delete)
+        end %>
+      </div>
+    </div>
+  </nav>
 
   <div class="page-section flexbox vertical stretch">
-
-<div class="logout">
-  <%= link_to("Log out", logout_path, method: :delete) %>
-</div>
 
 <div class="page-section flexbox vertical stretch">
   <div class="section-inner flexbox vertical stretch">
@@ -32,12 +37,7 @@
       </div>
       <% end %>
     </div>
-      <%= link_to("Map", stations_map_path) %>
 	</div>
   </div>
-</body> 
-</html> 
-
-
-
-
+</body>
+</html>
