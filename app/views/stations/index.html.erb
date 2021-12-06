@@ -1,8 +1,8 @@
-!DOCTYPE html> 
+<!DOCTYPE html> 
 <html> 
 <head> 
-  <meta charset = "UTI-8">
-	<title>Valetbike - Stations</title>
+  <meta charset = "UTI-8"> 
+  <title>Valetbike - Stations</title>
 </head> 
 <body>
   <nav> 
@@ -11,15 +11,25 @@
       <div class = "menu">
         <%= link_to("Home", root_path, :class => 'back-link')%>
         <%= link_to("Map", {:action => 'map'}) %>
+        <% if logged_in? %>
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <%=  current_user().first_name %>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <%= link_to("Profile", '#', class: "dropdown-item") %>
+            <%= link_to("Setting", '#', class: "dropdown-item") %>
+            <div class="dropdown-divider"></div>
+            <%= link_to("Log Out", sessions_destroy_path, class: "dropdown-item") %>
+          </div>
+        <% else %>
+          <%= link_to("Login", login_path)%>
+          <%= link_to("Create Account", new_user_path)%>
+        <% end %> 
       </div> 
-    </div> 
+    </div>
   </nav> 
-
+  
   <div class="page-section flexbox vertical stretch">
-
-<div class="logout">
-  <%= link_to("Log out", logout_path, method: :delete) %>
-</div>
 
 <div class="page-section flexbox vertical stretch">
   <div class="section-inner flexbox vertical stretch">
@@ -27,17 +37,10 @@
       <% if @stations.present? %>
         <%= render(partial: "stations/row", collection: @stations, as: :station) %>
       <% else %>
-      <div class="empty">
-        No stations found.
-      </div>
+        <div class="empty">
+          No stations found.
+        </div>
       <% end %>
-    </div>
-      <%= link_to("Map", stations_map_path) %>
-	</div>
-  </div>
-</body> 
-</html> 
-
-
-
-
+</div>
+</body>
+</html>
