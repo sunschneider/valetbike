@@ -5,15 +5,12 @@ class StationsController < ApplicationController
   end
 
   def show
-    @stations = Station.where.not(latitude: 'Empty', longitude: "Empty").pluck(:longitude, :latitude, :name)
+    @stations = Station.where.not(latitude: 'Empty', longitude: "Empty").pluck(:latitude, :longitude, :name)
     @markers = []
     @stations.each do |c|
       @hash = {:latlng => c, :popup => c[-1]}
       @markers << @hash
     end
-  end
-
-  def map
   end
 
 end

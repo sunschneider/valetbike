@@ -14,9 +14,9 @@ Rails.application.routes.draw do
 
   get 'login', to: 'sessions#login'
   post 'login', to: 'sessions#create'
-  get 'user/settings'
+  get 'settings', to: 'users#settings'
   get 'stations/map'
-  get 'user/stats'
+  get 'stats', to: 'users#stats'
 
 
 
