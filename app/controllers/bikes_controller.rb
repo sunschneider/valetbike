@@ -12,9 +12,15 @@ class BikesController < ApplicationController
   end
   
   def edit
-    #for checking out a bike
-    @bike = Bike.find(params[:id])
-    @bike.current_station_id = NULL
+  end
+  
+  def checkout
+    @bike = Bike.find(params[:bike_id])
+    @station = Station.find(params[:station_id])
+    @bike.current_station_id = nil
+    @bike.current_user_id = current_user[:id]
+    @bike.save
+    redirect_to(station_bike_path(@station))
   end
 
   def delete
