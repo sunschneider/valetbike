@@ -66,9 +66,9 @@ Group F (Golden Girls) ValetBike project
 ### Adding More Stations and Bikes
 In the command line, do the following:
  * rails console
- * s = Station.new(name: "name here", address: "address here", identifier: "number here", latitude: "latitude here", longitude: "longitude here")
+ * s = Station.new(name: "Smith College Museum of Art", address: "20 Elm Street", identifier: "92630", latitude: "42.318822", longitude: "-72.636271")
  * s.save
- * b = Bike.new(identifier: "number here")
+ * b = Bike.new(identifier: "72047")
  * b.current_station = s
  * b.save
  
