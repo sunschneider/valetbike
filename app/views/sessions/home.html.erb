@@ -1,14 +1,48 @@
-<head>
+<!DOCTYPE html> 
+<html> 
+	<head>
+	<meta charset = "UTI-8">
 	<title>Valetbike - home</title>
-</head>
-<body>
+	</head>
 
-<h1>Welcome to ValetBike!</h1>
+	<body>
+		<section>
+			<div class = "color-overlay"></div>
+		</section> 
 
-<%= link_to("Login", login_path)%>
-<%= link_to("Create Account", new_user_path)%>
-<%= link_to("Stations", stations_path)%>
+		<nav>  
+			<div class = "container"> 
+				<h1>Welcome to ValetBike!</h1>
 
+				<div class = "menu">
+					<% if logged_in? %>
+						<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<%=  current_user().first_name %>
+						</button>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							<%= link_to("Profile", '#', class: "dropdown-item") %>
+							<%= link_to("Setting", '#', class: "dropdown-item") %>
+							<div class="dropdown-divider"></div>
+							<%= link_to("Log Out", sessions_destroy_path, class: "dropdown-item") %>
+						</div>
+					<% else %>
+						<%= link_to("Login", login_path)%>
+						<%= link_to("Create Account", new_user_path)%>
+					<% end %> 
+					<%= link_to("Stations", stations_path)%>
+				</div> 
+				<!-- Only visible when webpage is minimized !-->
+				<button class = "hamburger"> 
+					<span></span>
+					<span></span>
+					<span></span>
+				</button> 
+			</div> 
+		</nav> 
+		<div class = "content"> 
+			<h1>Explore Nipmuc Notch<h1> 
+			<p>Valetbike enables you to venture the valley on two wheels</p> 
+		</div> 
+	</body>
 
-		
-</body>
+</html> 

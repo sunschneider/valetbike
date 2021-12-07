@@ -1,0 +1,15 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+/** Code used from 
+    https://www.youtube.com/watch?v=ZzQdVy8b8n4
+**/ 
+
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+  font-family: 'Fira sans', sans-serif; 
+}

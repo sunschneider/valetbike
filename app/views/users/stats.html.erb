@@ -1,8 +1,29 @@
-<h1>User Stats</h1>
+<head>
+  <meta charset = "UTI-8">
+	<title>Valetbike - Stats</title>
+</head>
+<body>
+  <nav>
+    <div class = "container">
+      <h2>Valetbike Stats</h2>
+      <div class = "menu">
+        <%= link_to("Home", root_path, :class => 'back-link')%>
+        <%= link_to("Map", {:controller => 'stations', :action => 'map'}) %>
+        <%= if logged_in?
+           link_to("Settings", {:controller => 'users', :action => 'settings'})
+        end %>
+        <%= if logged_in?
+           link_to("Log Out", logout_path, method: :delete)
+         else
+            link_to("Stations", {:controller => 'stations', :action => 'index'})
+        end %>
+      </div>
+    </div>
+  </nav>
 
-Total Distance Biked:
+<h1><br><br>User Stats<br></h1>
 
-<%# @user.total_distance %>
-<%#t.float :total_time
-t.float :recent_distance
-t.float :recent_time %>
+<p>Total Distance Biked: <%= @user.total_distance %> miles<br>
+Total Time Spent Biking: <%= @user.total_time %> hours<br>
+Most Recent Distance Biked: <%= @user.recent_distance%> miles <br>
+Most Recent Time Spent Biking: <%= @user.recent_time %> hours<br></p>
