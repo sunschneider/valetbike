@@ -1,9 +1,11 @@
+
 !DOCTYPE html>
 <html>
 <head>
   <meta charset = "UTI-8">
 	<title>Valetbike - Stations</title>
 </head>
+
 <body>
   <nav>
     <div class = "container">
@@ -11,6 +13,7 @@
       <div class = "menu">
         <%= link_to("Home", root_path, :class => 'back-link')%>
         <%= link_to("Map", {:action => 'map'}) %>
+
         <%= if logged_in?
            link_to("Stats", {:controller => 'users', :action => 'stats'})
         end %>
@@ -32,12 +35,13 @@
       <% if @stations.present? %>
         <%= render(partial: "stations/row", collection: @stations, as: :station) %>
       <% else %>
-      <div class="empty">
-        No stations found.
-      </div>
+        <div class="empty">
+          No stations found.
+        </div>
       <% end %>
     </div>
 	</div>
   </div>
 </body>
 </html>
+
