@@ -62,3 +62,13 @@ Group F (Golden Girls) ValetBike project
 
 ### Exploration Tips
 * This prototype has many features. To view them all, first load the website. You will see the Home page. From this page, you can create an account, log in, or view the stations and map. Once you create an account, you will be taken to the logged in home page: the station page. From here you can access many other features via links at the top of the page: your settings (currently a dummy page), the stations and number of bikes, and your current stats (randomly generated upon account creation). From the station pages, you can also access a map of Northampton, MA, with the stations and number of bikes indicated on it. From the stations page you can also check out a bike.
+
+### Adding More Stations and Bikes
+In the command line, do the following:
+ * rails console
+ * s = Station.new(name: "name here", address: "address here", identifier: "number here", latitude: "latitude here", longitude: "longitude here")
+ * s.save
+ * b = Bike.new(identifier: "number here")
+ * b.current_station = s
+ * b.save
+This will create a new station and a new bike at that station.
