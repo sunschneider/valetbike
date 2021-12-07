@@ -5,15 +5,18 @@ class StationsController < ApplicationController
   end
 
   def show
-    @stations = Station.where.not(latitude: 'Empty', longitude: "Empty").pluck(:longitude, :latitude, :name)
+    @stations = Station.where.not(latitude: 'Empty', longitude: "Empty").pluck(:latitude, :longitude, :name)
+    @bikeCount = []
     @markers = []
-    @stations.each do |c|
-      @hash = {:latlng => c, :popup => c[-1]}
-      @markers << @hash
+    @count = 0
+    for station in Station.all do
+      @bikeCount << station.docked_bikes.count
     end
-  end
-
-  def map
+    @stations.each do |c|
+      @hash = {:latlng => c, :popup => c[-1] + ", " + @bikeCount[@count].to_s + " Bikes"}
+      @markers << @hash
+      @count += 1
+    end
   end
 
 end

@@ -1,2 +1,25 @@
-<h1>Settings</h1>
+<head>
+  <meta charset = "UTI-8">
+	<title>Valetbike - Settings</title>
+</head>
+<body>
+  <nav>
+    <div class = "container">
+      <h2>Valetbike Settings</h2>
+      <div class = "menu">
+        <%= link_to("Home", root_path, :class => 'back-link')%>
+        <%= link_to("Map", {:controller => 'stations', :action => 'map'}) %>
+        <%= if logged_in?
+           link_to("Stats", {:controller => 'users', :action => 'stats'})
+        end %>
+        <%= if logged_in?
+           link_to("Log Out", logout_path, method: :delete)
+         else
+           link_to("Stations", {:controller => 'stations', :action => 'index'})
+        end %>
+      </div>
+    </div>
+  </nav>
+
+<h1><br><br>Settings<br></h1>
 <p>This is a placeholder settings page.</p>
