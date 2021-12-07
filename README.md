@@ -59,9 +59,18 @@ Group F (Golden Girls) ValetBike project
 * `rackup`
 * Open http://localhost:9292 (or http://127.0.0.1:9292) in a browser
 * You should see Group F's ValetBike home page
-
+### Functionalities
+* Login/Out 
+* Create account
+* View Stations
+* View Interactive Map
+* Checkout Bikes
+* View Stats page
+* Dummy Settings Page
 ### Exploration Tips
 * This prototype has many features. To view them all, first load the website. You will see the Home page. From this page, you can create an account, log in, or view the stations and map. Once you create an account, you will be taken to the logged in home page: the station page. From here you can access many other features via links at the top of the page: your settings (currently a dummy page), the stations and number of bikes, and your current stats (randomly generated upon account creation). From the station pages, you can also access a map of Northampton, MA, with the stations and number of bikes indicated on it. From the stations page you can also check out a bike.
+### Changes Since the prototype
+* We have made a lot of changes since our prototype. The most obvious one is that we added CSS to our site to make it pretty. We have improved the map functionality too so that it accurately displays stations. It is now also possible to checkout bikes. We have also added a log in/out functionality and a stats page that has randomly generated stats.
 
 ### Adding More Stations and Bikes
 In the command line, do the following:
