@@ -7,26 +7,36 @@
 </head>
 
 <body>
-  <nav>
-    <div class = "container">
-      <h2>Valetbike Stations</h2>
-      <div class = "menu">
-        <%= link_to("Home", root_path, :class => 'back-link')%>
-        <%= link_to("Map", {:action => 'map'}) %>
+  <nav>  
+			<div class = "container"> 
+				<h1>Welcome to ValetBike!</h1>
 
-        <%= if logged_in?
-           link_to("Stats", {:controller => 'users', :action => 'stats'})
-        end %>
-        <%= if logged_in?
-           link_to("Settings", {:controller => 'users', :action => 'settings'})
-        end %>
-        <%= if logged_in?
-          link_to("Log Out", logout_path, method: :delete)
-        end %>
-      </div>
-    </div>
-  </nav>
-
+				<div class = "menu">
+					<% if logged_in? %>
+						<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<%=  current_user().first_name %>
+						</button>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							<%= link_to("Stats", 'users_stats_path', class: "dropdown-item") %>
+							<%= link_to("Setting", 'users_settings_path', class: "dropdown-item") %>
+							<div class="dropdown-divider"></div>
+							<%= link_to("Log Out", sessions_destroy_path, class: "dropdown-item") %>
+						</div>
+					<% else %>
+						<%= link_to("Login", login_path)%>
+						<%= link_to("Create Account", new_user_path)%>
+					<% end %> 
+					<%= link_to("Stations", stations_path)%>
+          <%= link_to("Map", stations_map_path)%>
+				</div> 
+				<!-- Only visible when webpage is minimized !-->
+				<button class = "hamburger"> 
+					<span></span>
+					<span></span>
+					<span></span>
+				</button> 
+			</div> 
+		</nav>
   <div class="page-section flexbox vertical stretch">
 
 <div class="page-section flexbox vertical stretch">
