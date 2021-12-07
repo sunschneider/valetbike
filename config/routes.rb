@@ -14,11 +14,11 @@ Rails.application.routes.draw do
 
   get 'login', to: 'sessions#login'
   post 'login', to: 'sessions#create'
-  get 'settings', to: 'users#settings'
+  get '/settings', to: 'users#settings'
+  get '/stats', to: 'users#stats'
   get 'stations/map'
-  get 'stats', to: 'users#stats'
-
-
+  get '/users/settings', to: 'users#settings'
+  get '/users/stats', to: 'users#stats'
 
   get 'users/delete'
 

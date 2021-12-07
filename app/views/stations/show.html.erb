@@ -4,8 +4,8 @@
 	<title>Valetbike - Map</title>
 </head>
 <body>
-  <nav>  
-			<div class = "container"> 
+  <nav>
+			<div class = "container">
 				<h1>Welcome to ValetBike!</h1>
 
 				<div class = "menu">
@@ -14,28 +14,25 @@
 						<%=  current_user().first_name %>
 						</button>
 						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-							<%= link_to("Stats", 'users_stats_path', class: "dropdown-item") %>
-							<%= link_to("Setting", 'users_settings_path', class: "dropdown-item") %>
-							<div class="dropdown-divider"></div>
 							<%= link_to("Log Out", sessions_destroy_path, class: "dropdown-item") %>
 						</div>
 					<% else %>
 						<%= link_to("Login", login_path)%>
 						<%= link_to("Create Account", new_user_path)%>
-					<% end %> 
+					<% end %>
 					<%= link_to("Stations", stations_path)%>
           <%= link_to("Map", stations_map_path)%>
-				</div> 
+				</div>
 				<!-- Only visible when webpage is minimized !-->
-				<button class = "hamburger"> 
+				<button class = "hamburger">
 					<span></span>
 					<span></span>
 					<span></span>
-				</button> 
-			</div> 
+				</button>
+			</div>
 		</nav>
 
-<h1><br><br>Nipmuc Notch Map<br></h1>
+<h1><br><br><br>Nipmuc Notch Map<br></h1>
 
 
 <div id="map"><%= map(
@@ -50,4 +47,3 @@ https://www.rubydoc.info/gems/leaflet-rails/1.7.0
 https://leafletjs.com/examples/quick-start/
 https://stackoverflow.com/questions/22900904/setting-up-leaflet-with-ruby-on-rails
  %>
-
