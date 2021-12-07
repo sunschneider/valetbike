@@ -39,6 +39,8 @@ Group F (Golden Girls) ValetBike project
 * In the valetbike/config/initializers folder, add a new file named "_env.rb". In this file add this:
 * ENV['MYSQL_USERNAME']   =   "your username"
 * ENV['MYSQL_PASSWORD']   =   "your password"
+* ENV['MYSQL_SOCKET'] = your socket, which is "/tmp/mysql.sock" for Mac and "/var/run/mysqld/mysqld.sock" for Windows
+
 
 8. Prepare databases in MySQL
 * `mysql -u root -p`
@@ -49,12 +51,14 @@ Group F (Golden Girls) ValetBike project
 *  Copy the socket path from the terminal under "UNIX socket"
 * Paste to the socket in the database.yml under the config folder 
 * `rake db:migrate`
+* `rails import:stations`
+* `rails import:bike`
 
 10. Confirm app runs
 * `sudo service mysql start`
 * `rackup`
 * Open http://localhost:9292 (or http://127.0.0.1:9292) in a browser
-* You should Group F's ValetBike welcome page
+* You should see Group F's ValetBike home page
 
 ### Exploration Tips
-* This prototype has many features. To view them all, first load the website. You will see the Home page. From this page, you can create an account. Once you do, you will be taken to the logged in home page. From here you can access many other features via links: your settings (currently a dummy page), the stations and number of bikes, and your current stats. From the station pages, you can also access a map of Northampton, MA.
+* This prototype has many features. To view them all, first load the website. You will see the Home page. From this page, you can create an account, log in, or view the stations and map. Once you create an account, you will be taken to the logged in home page: the station page. From here you can access many other features via links at the top of the page: your settings (currently a dummy page), the stations and number of bikes, and your current stats (randomly generated upon account creation). From the station pages, you can also access a map of Northampton, MA, with the stations and number of bikes indicated on it. From the stations page you can also check out a bike.
