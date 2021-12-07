@@ -1,9 +1,15 @@
 <tbody>
+    <% if @bikes.present? %>
     <% @bikes.each do |bike| %>
       <tr>
         <td><%= bike.current_station.name %></td>
-        <td><%= bike.identifier %></td>
-        <td><%=link_to("Checkout", station_bike_path(bike.id), action: "patch") %></td>
+        <td> - Bike <%= bike.identifier %></td>
+        <td><%=link_to("Checkout", :controller => :bikes, :action => :checkout, bike_id: bike.id, station_id: bike.current_station.id, method:"patch") %></td>
       </tr> 
     <%end%>
+    <% else %>
+    <div class="empty">
+      No bikes found.
+    </div>
+    <% end %>
 </tbody> 

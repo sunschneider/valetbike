@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#login'
   get 'sessions/destroy'
   get 'stations', to: 'stations#index'
+  get 'bikes/checkout', to: 'bikes#checkout'
 
 
 
