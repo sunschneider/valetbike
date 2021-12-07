@@ -71,4 +71,5 @@ In the command line, do the following:
  * b = Bike.new(identifier: "number here")
  * b.current_station = s
  * b.save
+ 
 This will create a new station and a new bike at that station.
